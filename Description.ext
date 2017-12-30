@@ -1,0 +1,153 @@
+author = "Fuiba - Editado por Collumbus";
+
+// Overview:
+overviewText = "PMC AEGIS takes over the local extremist group Nekrón Chélia.";
+overviewPicture = "images\overview_01.paa"; // Mission screenshot
+
+// Loading:
+onLoadName = "Resurreximus"; // Mission name
+onLoadMission = "Neutralize key personnel of a local extremist group and acquire vehicles and weaponry.";
+loadScreen = "images\AEGISlogo.paa"; // Loading screen pip
+enableDebugConsole = 1;
+respawn            = 4;
+
+doneKeys[] = {"co10_pmcvcro01"};
+
+minScore=0;
+avgScore=1000;
+maxScore=14000;
+
+
+class CfgFunctions {
+
+class A3G_Loadout {
+
+	  class Arsenal {
+	    file = "a3g-loadout\functions\arsenal";
+	    class ReplaceLinkedItems {};
+	    class ReplaceWeapons {};
+	  };
+
+	  class Attachments {
+	    file = "a3g-loadout\functions\attachments";
+	    class ReplacePrimaryAttachments {};
+	    class ReplaceSecondaryAttachments {};
+	    class ReplaceHandgunAttachments {};
+	  };
+
+	  class Containers {
+	    file = "a3g-loadout\functions\containers";
+	    class ReplaceUniform {};
+	    class ReplaceBackpack {};
+	    class ReplaceVest {};
+	  };
+
+	  class General {
+	    file = "a3g-loadout\functions\general";
+	    class AddItems {};
+	    class AddMagazines {};
+	    class AddItemsToUniform {};
+	    class AddItemsToVest {};
+	    class AddItemsToBackpack {};
+	    class ReplaceItems {};
+	    class ReplaceMagazines {};
+	  };
+
+	  class Init {
+	    file = "a3g-loadout\functions\init";
+	    class ApplyLoadout {
+	      postInit = 1;
+	    };
+	    class AssignRespawn {
+	      postInit = 1;
+	    };
+	    class DoLoadout {};
+	    class IsConfigEntry {};
+	  };
+
+	  class LinkedItems {
+	    file = "a3g-loadout\functions\linkedItems";
+	    class ReplaceBinoculars {};
+	    class ReplaceCompass {};
+	    class ReplaceGoggles {};
+	    class ReplaceGPS {};
+	    class ReplaceHeadgear {};
+	    class ReplaceMap {};
+	    class ReplaceNVGoggles {};
+	    class ReplaceWatch {};
+	  };
+
+	  class Weapons {
+	    file = "a3g-loadout\functions\weapons";
+	    class ReplaceHandgunWeapon {};
+	    class ReplacePrimaryWeapon {};
+	    class ReplaceSecondaryWeapon {};
+	  };
+
+	};
+
+};
+
+class CfgLoadouts {
+//Team Lider
+class B_G_Soldier_TL_F {
+  weapons[] = {"rhs_weap_ak74m_plummag_folded","rhsusf_weap_m1911a1"};
+  magazines[] = {"Chemlight_blue","SmokeShell","SmokeShell","SmokeShellred","HandGrenade","HandGrenade","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK_green","rhs_30Rnd_545x39_AK_green","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP"};
+  items[] = {"ACE_EarPlugs","ACE_microDAGR","ACE_fieldDressing","ACE_packingBandage","ACE_morphine"};
+};
+//Autorifleman
+  class B_G_Soldier_AR_F {
+    weapons[] = {"rhs_weap_akms","rhsusf_weap_m1911a1"};
+    magazines[] = {"Chemlight_blue","SmokeShell","SmokeShellred","HandGrenade","HandGrenade","rhs_30Rnd_762x39mm","rhs_30Rnd_762x39mm","rhs_30Rnd_762x39mm","rhs_30Rnd_762x39mm","rhs_30Rnd_762x39mm_tracer","rhs_30Rnd_762x39mm_tracer","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP"};
+    items[] = {"ACE_EarPlugs","ACE_fieldDressing","ACE_packingBandage","ACE_morphine"};
+  };
+//Demolition Expert
+  class B_G_Soldier_exp_F {
+    weapons[] = {"rhs_weap_ak74m_plummag_folded","rhsusf_weap_m1911a1"};
+    backpack = "B_TacticalPack_oli";
+    magazines[] = {"Chemlight_blue","SmokeShell","SmokeShellred","HandGrenade","HandGrenade","APERSMine_Range_Mag","rhsusf_m112_mag","IEDLandSmall_Remote_Mag","APERSMine_Range_Mag","APERSMine_Range_Mag","DemoCharge_Remote_Mag","APERSTripMine_Wire_Mag","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhsusf_mag_7x45acp_MHP","rhs_30Rnd_545x39_AK","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP"};
+    items[] = {"ACE_EarPlugs","ACE_fieldDressing","ACE_packingBandage","ACE_morphine","MineDetector","ACE_DefusalKit","ACE_Clacker"};
+  };
+//Marksman
+  class B_G_Soldier_M_F {
+    weapons[] = {"rhs_weap_ak74m_2mag_npz","rhsusf_weap_m1911a1"};
+    magazines[] = {"Chemlight_blue","SmokeShell","SmokeShellred","HandGrenade","HandGrenade","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhs_30Rnd_545x39_AK","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP"};
+    items[] = {"ACE_EarPlugs","ACE_fieldDressing","ACE_packingBandage","ACE_morphine",};
+    primaryWeaponAttachments[] = {"optic_MRCO"};
+  };
+//Medic
+  class B_G_medic_F {
+    weapons[] = {"R3F_MP5A5","rhsusf_weap_m1911a1"};
+    backpack = "B_TacticalPack_oli";
+    magazines[] = {"Chemlight_blue","SmokeShell","SmokeShellred","HandGrenade","HandGrenade","R3F_30Rnd_9x19_MP5","R3F_30Rnd_9x19_MP5","R3F_30Rnd_9x19_MP5","R3F_30Rnd_9x19_MP5","R3F_30Rnd_9x19_MP5","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP","rhsusf_mag_7x45acp_MHP"};
+    items[] = {"ACE_fieldDressing","ACE_packingBandage","ACE_morphine","ACE_fieldDressing","ACE_fieldDressing","ACE_fieldDressing","ACE_fieldDressing","ACE_fieldDressing","ACE_fieldDressing","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_packingBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_elasticBandage","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_tourniquet","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_morphine","ACE_epinephrine","ACE_epinephrine","ACE_epinephrine","ACE_epinephrine","ACE_epinephrine","ACE_epinephrine","ACE_plasmaIV_500","ACE_plasmaIV_500","ACE_bloodIV_500","ACE_bloodIV_500","ACE_salineIV_500","ACE_salineIV_500","ACE_quikclot","ACE_quikclot","ACE_quikclot","ACE_quikclot","ACE_quikclot","ACE_quikclot","ACE_personalAidKit","ACE_surgicalKit"};
+    primaryWeaponAttachments[] = {"optic_ACO_grn"};
+  };
+};
+
+class CfgWorlds
+{
+		// Loading texts displayed on the bottom of the loading screen (picked randomly)
+		loadingTexts[]=
+		{
+			"PMC AEGIS was founded in 1997.",
+			"Stratis is of volcanic origin, with many rocks and crevices and AEGIS."
+		};
+};
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 1;
+	maxPlayers = 12;
+};
+
+class CfgDebriefing
+{
+	class End1
+	{
+		title = "Mission Completed";
+		subtitle = "";
+		description = "PMC AEGIS has successfully eliminated the key personnel in Nekron Chelia power structure and acquired weapons and vehicles. Corona will be spending the next days mounting some heavy weaponry on the offroad platforms.";
+	};
+};
